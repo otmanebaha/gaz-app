@@ -1,0 +1,7 @@
+{
+  "name": "gaz-mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

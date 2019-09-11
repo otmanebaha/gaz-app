@@ -1,0 +1,200 @@
+<ion-header>
+  <ion-toolbar style="width: 33%;float: left;">
+    <ion-title>
+      Gaz App
+    </ion-title>
+  </ion-toolbar>
+  <button style="width: 58%;background-color: red;color: white;
+        font-size: 20px;height: 38px;
+        position: absolute;
+        margin-top: 9px;" (click)="genererXLS()">
+        Générer <i class="far fa-file-excel" style="margin-left: 5px; font-size: 22px;"></i>
+  </button>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+          <ion-item>
+              <ion-label>Nom</ion-label>
+              <ion-input style="text-align: center;" type="text" placeholder="Nom" [(ngModel)]="gaz.nom"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Téléphone</ion-label>
+              <ion-input style="text-align: center;" type="number" placeholder="Téléphone" [(ngModel)]="gaz.telephone"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Activité</ion-label>
+              <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok"  [(ngModel)]="gaz.activite">
+                <ion-select-option value="point de vente">Point de vente</ion-select-option>
+                <ion-select-option value="snack">Snack</ion-select-option>
+                <ion-select-option value="cafee">Cafee</ion-select-option>
+                <ion-select-option value="hotel">Hotel</ion-select-option>
+                <ion-select-option value="agricol">Agricol</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Transaction</ion-label>
+              <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.transaction">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Emplacement</ion-label>
+              <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.emplacement">
+                  <ion-select-option value="A">A</ion-select-option>
+                  <ion-select-option value="B">B</ion-select-option>
+                  <ion-select-option value="C">C</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Nombre de visites</ion-label>
+            <ion-input style="text-align: center;" type="number" placeholder="Nombre de visites" [(ngModel)]="gaz.nombreVisites"></ion-input>
+          </ion-item>
+          <div style="text-align: center;">
+            <p>outils</p>
+          </div>
+          <div style="width: 100%;position: relative;">
+            <div style="position: absolute;left: 25%;">Presentoir</div>
+            <div style="position: relative;left: 70%;">Chariot</div>
+          </div>
+          <ion-item>
+              <ion-label>Tissir</ion-label>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.tissirPresentoir"></ion-input>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.tissirChariot"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Total</ion-label>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.totalPresentoir"></ion-input>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.totalChariot"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Buta</ion-label>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.butaPresentoir"></ion-input>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.butaChariot"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Afriquia</ion-label>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.afriquiaPresentoir"></ion-input>
+              <ion-input style="text-align: center;" type="number" placeholder="0" [(ngModel)]="gaz.afriquiaChariot"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Besoin clients</ion-label>
+              <ion-select placeholder="Sélectionner" multiple="true" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.besoinClients">
+                <ion-select-option value="1">Chariot</ion-select-option>
+                <ion-select-option value="2">Presentoir</ion-select-option>
+                <ion-select-option value="3">Augment nb visite</ion-select-option>
+                <ion-select-option value="4">Remise</ion-select-option>
+                <ion-select-option value="5">Facilité consignation</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Note</ion-label>
+              <ion-textarea style="text-align: center;" placeholder="Note" [(ngModel)]="gaz.note"></ion-textarea>
+          </ion-item>
+          <div style="text-align: center;">
+              <p>Part de marché</p>
+          </div>
+          <ion-item>
+              <ion-label>Tissir</ion-label>
+              <ion-input style="text-align: center;" placeholder="0" type="number" [(ngModel)]="gaz.tissirPartMarche"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Total</ion-label>
+              <ion-input style="text-align: center;" placeholder="0" type="number" [(ngModel)]="gaz.totalPartMarche"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Buta</ion-label>
+              <ion-input style="text-align: center;" placeholder="0" type="number" [(ngModel)]="gaz.butaPartMarche"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Afriquia</ion-label>
+              <ion-input style="text-align: center;" placeholder="0" type="number" [(ngModel)]="gaz.afriquiaPartMarche"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Photo tag</ion-label>
+            <ion-button (click)="takePicture()" color="success">
+                prendre
+            </ion-button>
+            <img [src]="photoTag" *ngIf="gaz.photoTag" style="width: 50%;height: 150px;"/>
+          </ion-item>
+          <ion-item>
+            <ion-label>Photo emp</ion-label>
+            <ion-button (click)="takePicture2()" color="success">
+                prendre
+            </ion-button>
+            <img [src]="photoEmp" *ngIf="gaz.photoEmp" style="width: 50%;height: 150px;"/>
+          </ion-item>
+          <ion-item>
+            <ion-label>Photo store</ion-label>
+            <ion-button (click)="takePicture3()" color="success">
+                prendre
+            </ion-button>
+            <img [src]="photoStore" *ngIf="gaz.photoStore" style="width: 50%;height: 150px;"/>
+          </ion-item>
+          <ion-item>
+              <ion-label>Tag NFC</ion-label>
+              <ion-button color="success" (click)="getNCF()">GET</ion-button>
+              <ion-input style="text-align: center;" type="text" placeholder="Tag NFC" [(ngModel)]="gaz.nfc"></ion-input>
+          </ion-item>
+          <ion-item>
+                <ion-label>Ville</ion-label>
+                <ion-input style="text-align: center;" type="text" placeholder="Ville" [(ngModel)]="gaz.ville"></ion-input>
+          </ion-item>
+          <ion-item>
+                <ion-label>Quartier</ion-label>
+                <ion-input style="text-align: center;" type="text" placeholder="Quartier" [(ngModel)]="gaz.quartier"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>GPS</ion-label>
+              <ion-button color="success" (click)="getLocation()">Position</ion-button>
+              <ion-input style="text-align: center;" type="text" [(ngModel)]="gaz.lat"></ion-input>
+              <ion-input style="text-align: center;" type="text" [(ngModel)]="gaz.long"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Cadeau1</ion-label>
+              <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.cadeau1">
+                <ion-select-option value="1gaz">1 gaz</ion-select-option>
+                <ion-select-option value="2gaz">2 gaz</ion-select-option>
+                <ion-select-option value="3gaz">3 gaz</ion-select-option>
+                <ion-select-option value="1classique">1 classique</ion-select-option>
+                <ion-select-option value="2classique">2 classique</ion-select-option>
+                <ion-select-option value="1Bng">1 Bng</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cadeau2</ion-label>
+            <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.cadeau2">
+              <ion-select-option value="1verre">1 verre</ion-select-option>
+              <ion-select-option value="2verre">2 verre</ion-select-option>
+              <ion-select-option value="Calculatrice">Calculatrice</ion-select-option>
+              <ion-select-option value="Montre">Montre</ion-select-option>
+              <ion-select-option value="Briquet">Briquet</ion-select-option>
+              <ion-select-option value="Ramasse monnaie">Ramasse monnaie</ion-select-option>
+              <ion-select-option value="T-shirt">T-shirt</ion-select-option>
+              <ion-select-option value="Casquette">Casquette</ion-select-option>
+              <ion-select-option value="Blouse">Blouse</ion-select-option>
+              <ion-select-option value="Parasol">Parasol</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Cadeau3</ion-label>
+            <ion-select placeholder="Sélectionner" cancelText="Annuler" okText="Ok" [(ngModel)]="gaz.cadeau3">
+              <ion-select-option value="1verre">1 verre</ion-select-option>
+              <ion-select-option value="2verre">2 verre</ion-select-option>
+              <ion-select-option value="Calculatrice">Calculatrice</ion-select-option>
+              <ion-select-option value="Montre">Montre</ion-select-option>
+              <ion-select-option value="Briquet">Briquet</ion-select-option>
+              <ion-select-option value="Ramasse monnaie">Ramasse monnaie</ion-select-option>
+              <ion-select-option value="T-shirt">T-shirt</ion-select-option>
+              <ion-select-option value="Casquette">Casquette</ion-select-option>
+              <ion-select-option value="Blouse">Blouse</ion-select-option>
+              <ion-select-option value="Parasol">Parasol</ion-select-option>
+            </ion-select>
+        </ion-item>
+  </ion-list>        
+  <div style="text-align: center;">
+        <ion-button color="primary" style="margin-bottom: 20px;margin-top: 10px;" (click)="save()">Enregistrer</ion-button>
+  </div>
+</ion-content>
